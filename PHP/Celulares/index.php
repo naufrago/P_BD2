@@ -187,7 +187,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	    	?>
 				  <div class="grid_1_of_4 images_1_of_4" id='muestra'>
 					 <h4><a href="preview.php?codigocelular=<?php echo $fila['codigocelular']; ?>"><?php echo $fila['referencia'];?> </a></h4>
-					  <a href="preview.php?codigocelular=<?php echo $fila['codigocelular']; ?>"><img src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" width='50' height='85'></a>
+					  <a href="preview.php?codigocelular=<?php echo $fila['codigocelular']; ?>"><img src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" width='85' height='85'></a>
 					  <div class="price-details">
 				       <div class="price-number">
 							<p><span class="rupees"><?php echo $fila['precio'];?> </span></p>
