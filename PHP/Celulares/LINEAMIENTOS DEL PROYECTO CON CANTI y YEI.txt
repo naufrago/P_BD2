@@ -1,0 +1,37 @@
+					LINEAMIENTOS DEL PROYECTO CON CANTI
+1 y 2.FORMULARIOS:
+
+ingresar un celular(almacena imagen FISICA en BD).
+ingresar proveedor.
+ingresar un usuario(opcional).
+
+3. CRUD DE celular:
+
+listar celulares
+eliminar celular.(Inacticar, que celular y cuanta cantidad).
+editar celular.
+buscar celular:
+	-id_celular.
+    -marca.
+    -precio.
+    -sistema Operativo.
+
+    CRUD proveedor
+    listar
+    editar
+    eliminar
+    buscar: nombre
+
+4 mapa sensitivo:
+	aplicado a la consulta de busqueda por SISTEMA OPERATIVO.
+	por marca(Opcional por CANTI).
+
+YA 5.Cuatro TRIGGERS:
+	A. Al momento de ingresar o modificar un celular validar que el costo sea menor o igual al precio de venta.
+
+	B. No permitir un registro de un nuevo tipo de celular que tenga la misma marca y referencia.
+
+	C. Solo se pueden INACTICAR los celulares de los cuales hay 0 cantidades.
+
+	D. Al momento de ingresar o modificar un celular, el almacenamiento interno,externo, la memoria,la camara,pantall, precio, costo y cantidad no sean negativas.
+

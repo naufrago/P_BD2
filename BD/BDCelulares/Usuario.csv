@@ -1,0 +1,11 @@
+idusuario;contrasena;rol;nombre;apellido;direccion;telefono;correo;activo
+10;1656;1;sara maria;mora marin;Cr 10 N 10-12;3014628525;saramariamoramarin@gmail.com.co;true
+11;6223;1;juan jose;ospina davila;Cll 15 N 89-97;3015082556;juanjoseospinadavila@gmail.com.co;true
+12;8600;2;sammyr ;ospina urrea;Cr 31 N 83-13;3189839298;sammyrospinaurrea@gmail.com.co;true
+13;2055;2;alison valeria;oyola carvajal;Cll 18 N 99-16;3012635919;alisonvaleriaoyolacarvajal@gmail.com.co;true
+14;9514;2;jhon deiby;perez chaura;Cr 47 N 54-77;3027489351;jhondeibyperezchaura@gmail.com.co;true
+15;9215;2;gerson alexis;ramirez patino;Cll 22 N 33-83;3047911400;gersonalexisramirezpatino@gmail.com.co;true
+16;4942;2;kevin david;rojas ramirez;Cr 48 N 19-22;3084937817;kevindavidrojasramirez@gmail.com.co;true
+17;1888;3;anderson jacobo;tabares lopez;Cll 85 N 15-40;3205380188;andersonjacobotabareslopez@gmail.com.co;true
+18;9184;3;daniel felipe;tabares ramirez;Cr 68 N 63-83;3098594067;danielfelipetabaresramirez@gmail.com.co;true
+19;2328;3;sarita ;osorio vergara;Cll 17 N 66-60;3008203429;saritaosoriovergara@gmail.com.co;true

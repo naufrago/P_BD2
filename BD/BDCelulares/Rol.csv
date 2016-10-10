@@ -1,0 +1,4 @@
+idpermiso;tipopermiso;activo
+1;administrador;true
+2;ventas;true
+3;bodega;true

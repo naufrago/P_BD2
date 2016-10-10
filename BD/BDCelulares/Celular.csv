@@ -1,0 +1,11 @@
+codigocelular;marca;referencia;cantidad;procesadorGHz;almexternoGB;alminternoGB;memoriaGB;camaraMPx;pantallaPx;sistoperativo;dimensionesMm;operador;costo;precio;imagen;activo
+100;Samsung;Galaxy S7 Edge;43;2.3;200;32;4;12;5.5;Android;150.9 x 72.6 x 7.7 mm;libre;1540000;2200000;;true
+101;OnePlus;3;23;2.15;0;66;6;16;5.5;Android;152.7 x 74.7 x 7.4 mm;libre;1330000;1900000;;true
+102;Apple;iPhone 6S;76;1.85;0;128;2;12;4.7;ios;138.3 x 67.1 x 7.1 mm;libre;1750000;2500000;;true
+103;HTC;10;32;2.2;2000;64;4;12;5.2;Android;145.9 x 71.9 x 9 mm;libre;1400000;2000000;;true
+104;Apple;iPhone 7;12;1.85;0;256;2;12;4.7;ios;138.3 x 67.1 x 7.1 mm;libre;2590000;3700000;;true
+105;Sony;Xperia X;82;1.8;200;64;3;23;5;Android;142.7 x 69.4 x 7.9 mm;libre;1470000;2100000;;true
+106;LG;G5;7;2.2;200;32;4;16;5.3;Android;149.4 x 73.9 x 7.7 mm;libre;1190000;1700000;;true
+107;Motorola;Moto Z;72;2.2;256;64;4;13;5.5;Android;153.3 x 75.3 x 5.2 mm;libre;1400000;2000000;;true
+108;Asus;Zenfone 3;36;2;128;64;4;16;5.5;Android;152.6 x 77.4 x 7.7 mm;libre;980000;1400000;;true
+109;Huawei;P9;46;2.5;128;64;4;12;5.2;Android;145 x 70.9 x 6.95 mm;libre;1260000;1800000;;true
