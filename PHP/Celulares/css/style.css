@@ -12,6 +12,13 @@ blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
 /* start editing from here */
+div #muestra{
+	height: 220px; 
+	width: 150px; 
+	border-radius: 2%;
+	
+}
+
 a{text-decoration:none;}
 .txt-rt{text-align:right;}/* text align right */
 .txt-lt{text-align:left;}/* text align left */
@@ -1526,4 +1533,5 @@ body {
    	width:100%;
    	text-align:center;
    }
+
 }
