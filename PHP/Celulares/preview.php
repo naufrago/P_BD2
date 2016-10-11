@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul id="etalage">
 							<li>
 								<a href="optionallink.html">
-									<img class="etalage_thumb_image"  src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>"/>
+									<img class="etalage_thumb_image" width="300" height="310"  src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>"/>
 									<img class="etalage_source_image" src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" title="" />
 								</a>
 							</li>

@@ -29,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="header_top">
 					<div class="logo">
 					
-						<a href="menuUsuario.php"><img src="images/logo1.png" width="75px" alt="" /></a>
+						<a ><img src="images/logo1.png" width="75px" alt="" /></a>
 					</div>
 						<div class="header_top_right" id="admin">
 							  	<center><span>Bienvenido:  <?php echo strtoupper($nombre." ".$apellido); ?></span></center>
@@ -41,10 +41,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   		    	<a class="toggleMenu" href="#">Menu</a>
 					<ul class="nav">
 						<li>
-							<a href="menuUsuario.php">Inicio</a>
+							<a href="#">Usuarios</a>
+								<ul>
+								<li><a href="listarUsuarios.php">Listar</a></li>
+								<li><a href="ingresarUsuario.php">Ingresar</a></li>
+								</ul>
 						</li>
-						<!--<li  class="test">
-						</li>-->
 						<li>
 							<a href="perfilUsuario.php">Perfil</a>
 						</li>
@@ -82,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							  </div>-->
       				</div>
 				  <div class="contact-form">
-				  	<center><h3>Lista de celulares</h3></center>
+				  	<center><h3>Lista de Celulares</h3></center>
 					<?php							
 						//capturo el status para haci lanzar el error
 						if(isset($_GET['status']) and $_GET['status']==1)
@@ -125,8 +127,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						}
 
 					?>
-					
 
+					
+			<form action="script-filtroCodigo.php" method="GET" onsubmit="return validacion(codigo.value)" >
+				<label>Codigo </label>
+				<input type="text" name="codigo" id="codigo">
+				<input type="submit" class="btn btn-xs btn-primary" value="Buscar">
+			</form>	
+					<?php							
+						//capturo el status para haci lanzar el error
+						if(isset($_GET['status']) and $_GET['status']==4)
+						{
+					?>
+						<div class="alert alert-danger alert-dismissable">
+                                El codigo de celular no Existe
+                        </div>
+					   <br/><br/>
+
+					<?php
+						}
+
+					?>
 			<table class="table table-striped table-bordered" id="tablalist">
               <thead>
               <!--TITULOS DE LA TABLA-->
@@ -234,6 +255,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});
+
+		function validacion(cod){
+
+		var codigo=cod;
+		var mensaje="";
+		
+		if (codigo==""){
+			mensaje="EL CAMPO DE CODIGO NO DEBE ESTAR VACIO,\n";
+		}
+
+		if (mensaje=="") {
+			return true;
+		}else{
+			alert(mensaje);
+			return false;
+		}
+	}
 	</script>
     <a href="#" id="toTop"> </a>
     <script type="text/javascript" src="js/navigation.js"></script>
