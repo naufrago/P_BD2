@@ -42,8 +42,12 @@
 		  		    	<a class="toggleMenu" href="#">Menu</a>
 							<ul class="nav">
 								<li>
-									<a href="menuUsuario.php">Inicio</a>
-								</li>
+							<a href="#">Usuarios</a>
+								<ul>
+								<li><a href="listarUsuarios.php">Listar</a></li>
+								<li><a href="ingresarUsuario.php">Ingresar</a></li>
+								</ul>
+						</li>
 								<!--<li  class="test">
 								</li>-->
 								<li>
