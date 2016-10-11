@@ -174,7 +174,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  </div>-->
     	    	</div>
     	    	
-    	    	<div class="content-bottom-right">
+    	    	<div class="content-bottom-right" id="content1">
     	    	<h3>Resultados</h3>
     	    	<?php
 				include "conexion.php";

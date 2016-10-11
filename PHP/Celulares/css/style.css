@@ -18,6 +18,12 @@ div #muestra{
 	border-radius: 2%;
 	
 }
+div #content1{
+	float:left;
+	width:78.8%;
+	padding-left:2%;
+	border-left:1px solid #D7D7D7;
+} 
 
 
 div #admin{
