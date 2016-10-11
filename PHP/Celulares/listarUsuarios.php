@@ -83,50 +83,147 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							   	    <iframe width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#888;text-align:left;font-size:0.85em">View Larger Map</a></small>
 							  </div>-->
       				</div>
-
 				  <div class="contact-form">
-				  	<center><h3>Editar Datos </h3></center>
-				  	<?php							
+				  	<center><h3>Lista de Usuarios</h3></center>
+					<?php							
 						//capturo el status para haci lanzar el error
 						if(isset($_GET['status']) and $_GET['status']==1)
 						{
 					?>
 						<div class="alert alert-success alert-dismissable">
-                                Datos Actualizados Correctamente
+                                Usuarip Agregado Exitosamente
                         </div>
 					   <br/><br/>
 
 					<?php
 						}
+
 					?>
-					    <form method="post" action="script-editarUsuario.php" enctype="multipart/form-data" 
-					    onsubmit="return validacion(nombre.value,apellido.value,contrasena.value,direccion.value,correo.value,telefono.value)" name="f_editar" id="f_editar">
-					    	<label>IdUsuario</label>
-					    	<input type="text" name="idUsuario" class="form-control" value="<?php echo $id_usuario; ?>" readonly>
+					<?php							
+						//capturo el status para haci lanzar el error
+						if(isset($_GET['status']) and $_GET['status']==3)
+						{
+					?>
+						<div class="alert alert-success alert-dismissable">
+                                Usuario Eliminado Exitosamente
+                        </div>
+					   <br/><br/>
 
-					    	<label>Nombre</label>
-					    	<input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $nombre; ?>" >
+					<?php
+						}
 
-					    	<label>Apellido</label>
-					    	<input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo $apellido; ?>" >
-					    	
-					    	<label>Contraseña</label>
-					    	<input type="text" name="contrasena" id="contrasena" class="form-control" value="<?php echo $contrasena; ?>" >
-					    	
-					    	<label>Direccion</label>
-					    	<input type="text" name="direccion" id="direccion" class="form-control" value="<?php echo $direccion; ?>" >
-					    	
-					    	<label>Correo</label>
-					    	<input type="text" name="correo" id="correo" class="form-control" value="<?php echo $correo; ?>" >
-								    	
-					    	<label>Telefono</label>
-					    	<input type="text" name="telefono" id='telefono' class="form-control" value="<?php echo $telefono; ?>" >
+					?>
+					<?php							
+						//capturo el status para haci lanzar el error
+						if(isset($_GET['status']) and $_GET['status']==2)
+						{
+					?>
+						<div class="alert alert-success alert-dismissable">
+                                Usuario Actualizado Exitosamente
+                        </div>
+					   <br/><br/>
 
-						   <div>
-						   		<center><input type="submit" value="Guardar Cambios"  class="mybutton"></center>
-						   		<input type="hidden" name="_token" value="{{csrf_token()}}"></input>
-						  </div>
-					    </form>
+					<?php
+						}
+
+					?>
+
+					
+			<form action="script-filtroIdusuario.php" method="GET" onsubmit="return validacion(idusuario.value)" >
+				<label>ID </label>
+				<input type="text" name="idusuario" id="idusuario">
+				<input type="submit" class="btn btn-xs btn-primary" value="Buscar">
+			</form>	
+					<?php							
+						//capturo el status para haci lanzar el error
+						if(isset($_GET['status']) and $_GET['status']==4)
+						{
+					?>
+						<div class="alert alert-danger alert-dismissable">
+                                El codigo de Usuario no Existe
+                        </div>
+					   <br/><br/>
+
+					<?php
+						}
+
+					?>
+			<table class="table table-striped table-bordered" id="tablalist">
+              <thead>
+              <!--TITULOS DE LA TABLA-->
+              <tr>
+                <th align="center"><h4>IdUsuario</h4></th>
+                <th align="center"><h4>Nombre</h4></th>
+                <th align="center"><h4>Apellido</h4></th>
+                <th align="center"><h4>Contraseña</h4></th>
+                <th align="center"><h4>Direccion</h4></th>
+                <th align="center"><h4>Correo</h4></th>
+                <th align="center"><h4>Telefono</h4></th>
+                <th align="center"><h4>Rol</h4></th>
+                <!--<td align="center"><h4>Imagen</h4></td>-->
+                <th align="center"><h4>OPCIONES</h4></th>
+              </tr>
+              </thead>
+              <tbody>
+             <!--FILAS DINAMICAS-->
+             <?php
+             	$consulta="SELECT * FROM usuario";
+             	//comprobamos que la consulta fue exitosa
+				$resultado= pg_query($consulta) or die('La consulta fallo: ' . pg_last_error());
+
+             	if(pg_num_rows($resultado)==0){
+             ?>
+             	<tr>
+             		<td colspan="5" align="center">NO SE ENCONTRARON usuarios</td>
+             	</tr>
+           
+             <?php
+           		} 
+
+             	while($fila=pg_fetch_assoc($resultado)){
+ 				if($fila['activo']=='t'){
+             ?>
+              <tr>
+              <!--se imprimen los valores obtenidos de la consutal_fac-->
+                <td align="center"> <?php echo $fila['idusuario'];?> </td>
+                <td align="center"> <?php echo $fila['nombre'];?> </td>
+                <td align="center"> <?php echo $fila['apellido'];?> </td>
+                <td align="center"> <?php echo $fila['contrasena'];?> </td>
+                <td align="center"> <?php echo $fila['direccion'];?> </td>
+                <td align="center"> <?php echo $fila['correo'];?> </td>
+                <td align="center"> <?php echo $fila['telefono'];?> </td>
+                <?php
+                if($fila['rol']==1){
+                ?>
+					<td align="center">Administrador</td>
+                <?php
+                }else if($fila['rol']==2){
+                ?>
+					<td align="center">Ventas</td>
+                <?php
+                }else if($fila['rol']==3){
+                ?>
+                	<td align="center">Bodega</td>
+                <?php
+                }
+            	?>
+                
+				<td>
+                <a class="btn btn-sm btn-success" href="editarUsuario.php?idusuario=<?php echo $fila['idusuario']; ?>" >Editar</a>   
+                <a class="btn btn-sm btn-danger" href="eliminarUsuario.php?idusuario=<?php echo $fila['idusuario']; ?>">Borrar</a>
+                </td>
+
+              </tr>
+              <!--FIN DEL WHILE-->
+          	<?php }
+
+          			} ?>
+
+              </tbody>
+            </table>
+
+
+
 				  </div>
 			  </div>		
          </div> 
@@ -156,41 +253,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 		});
 
-	function validacion(nom,ape,cont,dire,cor,tele){
+		function validacion(cod){
 
-		var nombre=nom;
-		var apellido=ape;
-		var contrasena=cont;
-		var direccion=dire;
-		var correo=cor;
-		var telefono=tele;
+		var codigo=cod;
 		var mensaje="";
-
-		if (nombre=="") {
-			mensaje=mensaje+"EL CAMPO DE NOMBRE NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (apellido=="") {
-			mensaje=mensaje+"EL CAMPO DE APELLIDO NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (contrasena=="") {
-			mensaje=mensaje+"EL CAMPO DE CONTRASEÑA NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (direccion=="") {
-			mensaje=mensaje+"EL CAMPO DE DIRECCION NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (correo=="") {
-			mensaje=mensaje+"EL CAMPO DE CORREO NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (telefono=="") {
-			mensaje=mensaje+"EL CAMPO DE TELEFONO NO DEBE ESTAS VACIO,\n";
-		}
-
 		
+		if (codigo==""){
+			mensaje="EL CAMPO DE ID NO DEBE ESTAR VACIO,\n";
+		}
+
 		if (mensaje=="") {
 			return true;
 		}else{

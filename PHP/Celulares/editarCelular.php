@@ -29,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="header_top">
 					<div class="logo">
 					
-						<a href="menuUsuario.php"><img src="images/logo1.png" width="75px" alt="" /></a>
+						<a h><img src="images/logo1.png" width="75px" alt="" /></a>
 					</div>
 						<div class="header_top_right">
 							  	<span> Bienvenido <?php echo $nombre." ".$apellido; ?></span>
@@ -40,9 +40,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   		    <div class="navigation">
   		    	<a class="toggleMenu" href="#">Menu</a>
 					<ul class="nav">
+					<!--
 						<li>
 							<a href="menuUsuario.php">Inicio</a>
-						</li>
+						</li>-->
 						<!--<li  class="test">
 						</li>-->
 						<li>

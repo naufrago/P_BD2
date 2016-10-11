@@ -83,45 +83,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							   	    <iframe width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#888;text-align:left;font-size:0.85em">View Larger Map</a></small>
 							  </div>-->
       				</div>
-				  <div class="contact-form">
-				  	<center><h3>Registrar Celular</h3></center>
-					    <form method="post" action="script-GuardaCelular.php" enctype="multipart/form-data" onsubmit="return validacion(codigocelular.value,marca.value,referencia.value,cantidad.value,procesadorghz.value,almexternogb.value,alminternogb.value,memoriagb.value,camarampx.value,pantallapx.value,sistoperativo.value,dimensionesm.value,operador.value,costo.value,precio.value,imagen.value)" >
-					    	
-					    	<label>Codigo Celular</label>
-					    	<input type="text" name="codigocelular" id="codigocelular" class="form-control">
-					    	<label>Marca</label>
-					    	<input type="text" name="marca" id="marca" class="form-control">
-					    	<label>Referencia</label>
-					    	<input type="text" name="referencia"  id="referencia" class="form-control">
-					    	<label>Cantidad</label>
-					    	<input type="text" name="cantidad" id="cantidad"  class="form-control">
-					    	<label>Procesador</label>
-					    	<input type="text" name="procesadorghz" id="procesadorghz" class="form-control">
-					    	<label>Almacenamiento Externo</label>
-					    	<input type="text" name="almexternogb" id="almexternogb"class="form-control">
-					    	<label>Almacenamiento Interno</label>
-					    	<input type="text" name="alminternogb" id="alminternogb" class="form-control">
-					    	<label>Memoria</label>
-					    	<input type="text" name="memoriagb" id="memoriagb" class="form-control">
-					    	<label>Camara</label>
-					    	<input type="text" name="camarampx" id="camarampx" class="form-control">
-					    	<label>Pantalla</label>
-					    	<input type="text" name="pantallapx" id="pantallapx" class="form-control">
-					    	<label>Sistema Operativo</label>
-					    	<input type="text" name="sistoperativo"  id="sistoperativo" class="form-control">
-					    	<label>Dimensiones</label>
-					    	<input type="text" name="dimensionesm" id="dimensionesm" class="form-control">
-					    	<label>Operador</label>
-					    	<input type="text" name="operador"  id="operador" class="form-control">
-					    	<label>Costo</label>
-					    	<input type="text" name="costo"  id="costo" class="form-control">
-					    	<label>Precio</label>
-					    	<input type="text" name="precio"  id="precio" class="form-control">
-					    	<label>Imagen</label>
-					    	<input type="file" name="imagen" id="imagen" >
 
+				  <div class="contact-form">
+				  	<center><h3>Ingresar Usuario</h3></center>
+	
+					    <form method="post" action="script-ingresarUsuario.php" enctype="multipart/form-data" 
+					    onsubmit="return validacion(nombre.value,apellido.value,contrasena.value,direccion.value,correo.value,telefono.value)" name="f_editar" id="f_editar">
+					    	<label>IdUsuario</label>
+					    	<input type="text" name="idUsuario" class="form-control"  >
+
+					    	<label>Nombre</label>
+					    	<input type="text" name="nombre" id="nombre" class="form-control" >
+
+					    	<label>Apellido</label>
+					    	<input type="text" name="apellido" id="apellido" class="form-control" >
+					    	
+					    	<label>Contraseña</label>
+					    	<input type="text" name="contrasena" id="contrasena" class="form-control"  >
+					    	
+					    	<label>Direccion</label>
+					    	<input type="text" name="direccion" id="direccion" class="form-control" >
+					    	
+					    	<label>Correo</label>
+					    	<input type="text" name="correo" id="correo" class="form-control"  >
+								    	
+					    	<label>Telefono</label>
+					    	<input type="text" name="telefono" id='telefono' class="form-control"  >
+							<label>Rol</label>
+							<select name="rol" class="form-control">
+							    	<option value="2">Ventas</option>
+							    	<option value="3">Bodega</option>
+							</select>
 						   <div>
-						   		<center><input type="submit" value="Guardar"  class="mybutton"></center>
+						   		<center><input type="submit" value="Guardar Cambios"  class="mybutton"></center>
 						   		<input type="hidden" name="_token" value="{{csrf_token()}}"></input>
 						  </div>
 					    </form>
@@ -154,92 +148,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			
 		});
 
- 
-		function validacion(cod,mar,ref,can,pro,almae,almai,mem,cam, pan,os,dim,ope,cos,pre,img){
+	function validacion(nom,ape,cont,dire,cor,tele){
 
-		var codigo=cod;
-		var marca=mar;
-		var referencia=ref;
-		var cantidad=can;
-		var procesador=pro;
-		var almacenamientoe=almae;
-		var almacenamientoi=almai;
-		var memoria=mem;
-		var camara=cam;
-		var pantalla=pan;
-		var sistema=os;
-		var dimenciones=dim;
-		var operador=ope;
-		var costo=cos;
-		var precio=pre;
-		var imagen=img;
-
+		var nombre=nom;
+		var apellido=ape;
+		var contrasena=cont;
+		var direccion=dire;
+		var correo=cor;
+		var telefono=tele;
 		var mensaje="";
+
+		if (nombre=="") {
+			mensaje=mensaje+"EL CAMPO DE NOMBRE NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (apellido=="") {
+			mensaje=mensaje+"EL CAMPO DE APELLIDO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (contrasena=="") {
+			mensaje=mensaje+"EL CAMPO DE CONTRASEÑA NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (direccion=="") {
+			mensaje=mensaje+"EL CAMPO DE DIRECCION NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (correo=="") {
+			mensaje=mensaje+"EL CAMPO DE CORREO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (telefono=="") {
+			mensaje=mensaje+"EL CAMPO DE TELEFONO NO DEBE ESTAS VACIO,\n";
+		}
+
 		
-		if (codigo=="") {
-			mensaje=mensaje+"EL CAMPO DE CODIGO NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (marca=="") {
-			mensaje=mensaje+"EL CAMPO DE MARCA NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (referencia=="") {
-			mensaje=mensaje+"EL CAMPO DE REFERENCIA NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (cantidad=="") {
-			mensaje=mensaje+"EL CAMPO DE CANTIDAD NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (procesador=="") {
-			mensaje=mensaje+"EL CAMPO DE PROCESADOR NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (almacenamientoe=="") {
-			mensaje=mensaje+"EL CAMPO DE ALMACENAMIENTO EXTERNO NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (almacenamientoi=="") {
-			mensaje=mensaje+"EL CAMPO DE ALMACENAMIENTO INTERNO NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (memoria=="") {
-			mensaje=mensaje+"EL CAMPO DE MEMORIA NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (camara=="") {
-			mensaje=mensaje+"EL CAMPO DE CAMARA NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (pantalla=="") {
-			mensaje=mensaje+"EL CAMPO DE PANTALLA NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (sistema=="") {
-			mensaje=mensaje+"EL CAMPO DE SISTEMA OPERTIVO NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (dimenciones=="") {
-			mensaje=mensaje+"EL CAMPO DE DIMENCIONES NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (operador=="") {
-			mensaje=mensaje+"EL CAMPO DE OPERADOR NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (costo=="") {
-			mensaje=mensaje+"EL CAMPO DE COSTO NO DEBE ESTAS VACIO,\n";
-		}
-		
-		if (precio=="") {
-			mensaje=mensaje+"EL CAMPO DE PRECIO NO DEBE ESTAS VACIO,\n";
-		}
-
-		if (imagen=="") {
-			mensaje=mensaje+"EL CAMPO DE IMAGEN NO DEBE ESTAS VACIO,\n";
-		}
-
 		if (mensaje=="") {
 			return true;
 		}else{
