@@ -173,7 +173,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		var imagen=img;
 
 		var mensaje="";
-		alert('entro')
+		
 		if (codigo=="") {
 			mensaje=mensaje+"EL CAMPO DE CODIGO NO DEBE ESTAS VACIO,\n";
 		}

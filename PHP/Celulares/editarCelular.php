@@ -91,40 +91,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				  <div class="contact-form">
 				  	<center><h3>Editar Celular</h3></center>
-					    <form method="post" action="script-editaCelular.php" enctype="multipart/form-data" >
+					    <form method="post" action="script-editaCelular.php" enctype="multipart/form-data" onsubmit="return validacion(codigocelular.value,marca.value,referencia.value,cantidad.value,procesadorghz.value,almexternogb.value,alminternogb.value,memoriagb.value,camarampx.value,pantallapx.value,sistoperativo.value,dimensionesm.value,operador.value,costo.value,precio.value,imagen.value)">
 					    	
 					    	<label>Codigo Celular</label>
-					    	<input type="text" name="codigocelular" class="form-control" value="<?php echo $fila['codigocelular']?>" readonly>
+					    	<input type="text" name="codigocelular" id="codigocelular" class="form-control" value="<?php echo $fila['codigocelular']?>" readonly>
 					    	<label>Marca</label>
-					    	<input type="text" name="marca" class="form-control" value="<?php echo $fila['marca']?>">
+					    	<input type="text" name="marca"  id="marca" class="form-control" value="<?php echo $fila['marca']?>">
 					    	<label>Referencia</label>
-					    	<input type="text" name="referencia" class="form-control" value="<?php echo $fila['referencia']?>">
+					    	<input type="text" name="referencia" id="referencia"  class="form-control" value="<?php echo $fila['referencia']?>">
 					    	<label>Cantidad</label>
-					    	<input type="text" name="cantidad" class="form-control" value="<?php echo $fila['cantidad']?>">
+					    	<input type="text" name="cantidad" id="cantidad" class="form-control" value="<?php echo $fila['cantidad']?>">
 					    	<label>Procesador</label>
-					    	<input type="text" name="procesadorghz" class="form-control" value="<?php echo $fila['procesadorghz']?>">
+					    	<input type="text" name="procesadorghz" id="procesadorghz" class="form-control" value="<?php echo $fila['procesadorghz']?>">
 					    	<label>Almacenamiento Externo</label>
-					    	<input type="text" name="almexternogb" class="form-control" value="<?php echo $fila['almexternogb']?>">
+					    	<input type="text" name="almexternogb" id="almexternogb" class="form-control" value="<?php echo $fila['almexternogb']?>">
 					    	<label>Almacenamiento Interno</label>
-					    	<input type="text" name="alminternogb" class="form-control" value="<?php echo $fila['alminternogb']?>">
+					    	<input type="text" name="alminternogb" id="alminternogb" class="form-control" value="<?php echo $fila['alminternogb']?>">
 					    	<label>Memoria</label>
-					    	<input type="text" name="memoriagb" class="form-control" value="<?php echo $fila['memoriagb']?>">
+					    	<input type="text" name="memoriagb" id="memoriagb" class="form-control" value="<?php echo $fila['memoriagb']?>">
 					    	<label>Camara</label>
-					    	<input type="text" name="camarampx" class="form-control" value="<?php echo $fila['camarampx']?>">
+					    	<input type="text" name="camarampx" id="camarampx" class="form-control" value="<?php echo $fila['camarampx']?>">
 					    	<label>Pantalla</label>
-					    	<input type="text" name="pantallapx" class="form-control" value="<?php echo $fila['pantallapx']?>">
+					    	<input type="text" name="pantallapx" id="pantallapx" class="form-control" value="<?php echo $fila['pantallapx']?>">
 					    	<label>Sistema Operativo</label>
-					    	<input type="text" name="sistoperativo" class="form-control" value="<?php echo $fila['sistoperativo']?>">
+					    	<input type="text" name="sistoperativo"  id="sistoperativo" class="form-control" value="<?php echo $fila['sistoperativo']?>">
 					    	<label>Dimensiones</label>
-					    	<input type="text" name="dimensionesm" class="form-control" value="<?php echo $fila['dimensionesm']?>">
+					    	<input type="text" name="dimensionesm" id="dimensionesm" class="form-control" value="<?php echo $fila['dimensionesm']?>">
 					    	<label>Operador</label>
-					    	<input type="text" name="operador" class="form-control" value="<?php echo $fila['operador']?>">
+					    	<input type="text" name="operador" id="operador" class="form-control" value="<?php echo $fila['operador']?>">
 					    	<label>Costo</label>
-					    	<input type="text" name="costo" class="form-control" value="<?php echo $fila['costo']?>">
+					    	<input type="text" name="costo"  id="costo" class="form-control" value="<?php echo $fila['costo']?>">
 					    	<label>Precio</label>
-					    	<input type="text" name="precio" class="form-control" value="<?php echo $fila['precio']?>">
+					    	<input type="text" name="precio" id="precio" class="form-control" value="<?php echo $fila['precio']?>">
 					    	<label>Imagen</label>
-					    	<input type="file" name="imagen" >
+					    	<input type="file" name="imagen" id="imagen" value="<?php echo $fila['imagen']?>" >
 
 						   <div>
 						   		<center><input type="submit" value="Guardar Cambios"  class="mybutton"></center>
@@ -159,6 +159,99 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});
+
+		function validacion(cod,mar,ref,can,pro,almae,almai,mem,cam, pan,os,dim,ope,cos,pre,img){
+
+		var codigo=cod;
+		var marca=mar;
+		var referencia=ref;
+		var cantidad=can;
+		var procesador=pro;
+		var almacenamientoe=almae;
+		var almacenamientoi=almai;
+		var memoria=mem;
+		var camara=cam;
+		var pantalla=pan;
+		var sistema=os;
+		var dimenciones=dim;
+		var operador=ope;
+		var costo=cos;
+		var precio=pre;
+		var imagen=img;
+
+		var mensaje="";
+		if (codigo=="") {
+			mensaje=mensaje+"EL CAMPO DE CODIGO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (marca=="") {
+			mensaje=mensaje+"EL CAMPO DE MARCA NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (referencia=="") {
+			mensaje=mensaje+"EL CAMPO DE REFERENCIA NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (cantidad=="") {
+			mensaje=mensaje+"EL CAMPO DE CANTIDAD NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (procesador=="") {
+			mensaje=mensaje+"EL CAMPO DE PROCESADOR NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (almacenamientoe=="") {
+			mensaje=mensaje+"EL CAMPO DE ALMACENAMIENTO EXTERNO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (almacenamientoi=="") {
+			mensaje=mensaje+"EL CAMPO DE ALMACENAMIENTO INTERNO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (memoria=="") {
+			mensaje=mensaje+"EL CAMPO DE MEMORIA NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (camara=="") {
+			mensaje=mensaje+"EL CAMPO DE CAMARA NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (pantalla=="") {
+			mensaje=mensaje+"EL CAMPO DE PANTALLA NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (sistema=="") {
+			mensaje=mensaje+"EL CAMPO DE SISTEMA OPERTIVO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (dimenciones=="") {
+			mensaje=mensaje+"EL CAMPO DE DIMENCIONES NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (operador=="") {
+			mensaje=mensaje+"EL CAMPO DE OPERADOR NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (costo=="") {
+			mensaje=mensaje+"EL CAMPO DE COSTO NO DEBE ESTAS VACIO,\n";
+		}
+		
+		if (precio=="") {
+			mensaje=mensaje+"EL CAMPO DE PRECIO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (imagen=="") {
+			mensaje=mensaje+"EL CAMPO DE IMAGEN NO DEBE ESTAS VACIO,\n";
+		}
+
+		
+		if (mensaje=="") {
+			return true;
+		}else{
+			alert(mensaje);
+			return false;
+		}
+	}
 	</script>
     <a href="#" id="toTop"> </a>
     <script type="text/javascript" src="js/navigation.js"></script>
