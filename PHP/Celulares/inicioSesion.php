@@ -78,7 +78,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						}
 
 					?>
-			<form action="script-inicioSesion.php" method="POST">
+			<div id="login1"><center>
+			<form action="script-inicioSesion.php" method="POST" >
 				<h2>Usuario<br/></h2>
 				<input type="text" name="usuario"></input>
 				<br/><br/>
@@ -87,7 +88,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</br></br>
 				<input type="submit" value="Ingresar"></input>
 				<input type="hidden" name="_token" value="{{csrf_token()}}">
-			</form>
+			</center></form></div>
 			   	
 
 	  	      </div>

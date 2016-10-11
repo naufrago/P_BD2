@@ -97,27 +97,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<?php
 						}
 					?>
-					    <form method="post" action="script-editarUsuario.php" enctype="multipart/form-data" >
+					    <form method="post" action="script-editarUsuario.php" enctype="multipart/form-data" 
+					    onsubmit="return validacion(nombre.value,apellido.value,contrasena.value,direccion.value,correo.value,telefono.value)" name="f_editar" id="f_editar">
 					    	<label>IdUsuario</label>
 					    	<input type="text" name="idUsuario" class="form-control" value="<?php echo $id_usuario; ?>" readonly>
 
 					    	<label>Nombre</label>
-					    	<input type="text" name="nombre" class="form-control" value="<?php echo $nombre; ?>" >
+					    	<input type="text" name="nombre" id="nombre" class="form-control" value="<?php echo $nombre; ?>" >
 
 					    	<label>Apellido</label>
-					    	<input type="text" name="apellido" class="form-control" value="<?php echo $apellido; ?>" >
+					    	<input type="text" name="apellido" id="apellido" class="form-control" value="<?php echo $apellido; ?>" >
 					    	
 					    	<label>Contraseña</label>
-					    	<input type="text" name="contrasena" class="form-control" value="<?php echo $contrasena; ?>" >
+					    	<input type="text" name="contrasena" id="contrasena" class="form-control" value="<?php echo $contrasena; ?>" >
 					    	
 					    	<label>Direccion</label>
-					    	<input type="text" name="direccion" class="form-control" value="<?php echo $direccion; ?>" >
+					    	<input type="text" name="direccion" id="direccion" class="form-control" value="<?php echo $direccion; ?>" >
 					    	
 					    	<label>Correo</label>
-					    	<input type="text" name="correo" class="form-control" value="<?php echo $correo; ?>" >
+					    	<input type="text" name="correo" id="correo" class="form-control" value="<?php echo $correo; ?>" >
 								    	
 					    	<label>Telefono</label>
-					    	<input type="text" name="telefono" class="form-control" value="<?php echo $telefono; ?>" >
+					    	<input type="text" name="telefono" id='telefono' class="form-control" value="<?php echo $telefono; ?>" >
 
 						   <div>
 						   		<center><input type="submit" value="Guardar Cambios"  class="mybutton"></center>
@@ -152,6 +153,49 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			$().UItoTop({ easingType: 'easeOutQuart' });
 			
 		});
+
+	function validacion(nom,ape,cont,dire,cor,tele){
+
+		var nombre=nom;
+		var apellido=ape;
+		var contrasena=cont;
+		var direccion=dire;
+		var correo=cor;
+		var telefono=tele;
+		var mensaje="";
+
+		if (nombre=="") {
+			mensaje=mensaje+"EL CAMPO DE NOMBRE NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (apellido=="") {
+			mensaje=mensaje+"EL CAMPO DE APELLIDO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (contrasena=="") {
+			mensaje=mensaje+"EL CAMPO DE CONTRASEÑA NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (direccion=="") {
+			mensaje=mensaje+"EL CAMPO DE DIRECCION NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (correo=="") {
+			mensaje=mensaje+"EL CAMPO DE CORREO NO DEBE ESTAS VACIO,\n";
+		}
+
+		if (telefono=="") {
+			mensaje=mensaje+"EL CAMPO DE TELEFONO NO DEBE ESTAS VACIO,\n";
+		}
+
+		
+		if (mensaje=="") {
+			return true;
+		}else{
+			alert(mensaje);
+			return false;
+		}
+	}
 	</script>
     <a href="#" id="toTop"> </a>
     <script type="text/javascript" src="js/navigation.js"></script>
