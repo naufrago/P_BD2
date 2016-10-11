@@ -174,8 +174,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  </div>-->
     	    	</div>
     	    	
-    	    	<div class="content-bottom-right">
-    	    	<h3>Resultados</h3>
+    	    	<div class="content-bottom-right" id="content1">
+    	    	<h3>Resultados por SO</h3>
     	    		<CENTER><IMG src="images/imagenSensitiva.png" USEMAP="mapaSistemas" /></CENTER>
 
     	    		<MAP NAME="mapaSistemas">

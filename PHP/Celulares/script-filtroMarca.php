@@ -174,7 +174,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  </div>-->
     	    	</div>
     	    	<?php $marca=$_GET['marca']; ?>
-    	    	<div class="content-bottom-right">
+    	    	<div class="content-bottom-right" id="content1">
     	    	<h3>Celulares  <?php echo strtoupper($marca); ?></h3>
 
     	    	<?php

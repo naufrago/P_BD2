@@ -148,7 +148,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							      <li><a href="imagenSensitivaMarcas.php">Marca</a>
 							      </li>
 							      <li><a href="imagenSensitivaSistemas.php">Sistema Operativo</a></li>
-						  	 </ul>
+							      </ul>
 						</div>	
 						<!--
 						<div class="buters-guide">

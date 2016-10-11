@@ -174,7 +174,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  </div>-->
     	    	</div>
     	    	<?php $sistema=$_GET['sistema']; ?>
-    	    	<div class="content-bottom-right">
+    	    	<div class="content-bottom-right" id="content1">
     	    	<h3>Celulares  <?php echo strtoupper($sistema); ?></h3>
 
     	    	<?php
