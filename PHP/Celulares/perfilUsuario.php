@@ -31,8 +31,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					
 						<a href="menuUsuario.php"><img src="images/logo1.png" width="75px" alt="" /></a>
 					</div>
-						<div class="header_top_right">
-							  	<span> Bienvenido <?php echo $nombre." ".$apellido; ?></span>
+						<div class="header_top_right" id="admin">
+							  	<center><span>Bienvenido:  <?php echo strtoupper($nombre." ".$apellido); ?></span></center>
 					</div>
 			     <div class="clear"></div>
   		    </div>     
