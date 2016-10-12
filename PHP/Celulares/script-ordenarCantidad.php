@@ -161,6 +161,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					?>
 			<br>
 			<br>
+			
 			<table class="table table-striped table-bordered" id="tablalist">
               <thead>
               <!--TITULOS DE LA TABLA-->
@@ -188,7 +189,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <tbody>
              <!--FILAS DINAMICAS-->
              <?php
-             	$consulta="SELECT * FROM celular";
+             	$consulta="SELECT * FROM celular ORDER BY cantidad desc";
+
              	//comprobamos que la consulta fue exitosa
 				$resultado= pg_query($consulta) or die('La consulta fallo: ' . pg_last_error());
 
