@@ -21,7 +21,7 @@ if(isset($usuario)){
 		$_SESSION['nombre']=$fila['nombre'];
 
 		//redirecciono a la pagina principal pero  con status 1(exito de sesion)
-		header("Location:perfilUsuario.php");
+		header("Location:inicioUsuario.php");
 	}else{
 		
 		// libero los resultados para futuras consultas

@@ -47,6 +47,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<!--<li  class="test">
 						</li>-->
 						<li>
+							<a href="inicioUsuario.php">Inicio</a>
+						</li>
+						<li>
+							<a href="#">Usuarios</a>
+								<ul>
+								<li><a href="listarUsuarios.php">Listar</a></li>
+								<li><a href="ingresarUsuario.php">Ingresar</a></li>
+								</ul>
+						</li>
+						<li>
 							<a href="perfilUsuario.php">Perfil</a>
 						</li>
 
