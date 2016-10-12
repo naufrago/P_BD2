@@ -85,6 +85,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				  <div class="contact-form">
 				  	<center><h3>Datos de Contacto</h3></center>
+				  		<div class="alert alert-success alert-dismissable"><center><ul>PROYECTO DE BASES DE DATOS II<BR><BR>
+		   				<li>Grupo : <BR>Juan David Cantillo Hincapie -  jdcantilloh@unal.edu.co<BR>
+										Cristian Jair Galvis Cardenas - cjgalvisc@unal.edu.co<BR>
+										Yeison Aguirre Osorio - yaguirreo@unal.edu.co</center> </li>
+
+		   				</ul></div>
+		   			<div class="contact-form">
+				  	<center><h3>Manual de Usuario</h3>
+		   				<embed src="manual/manual.pdf" width="1100" height="675"></center>
+		   			</div>
+				  </div>
+				  <center><div class="contact-form">
+				  	<center><h3>Comentarios</h3></center>
+				  	<div id="fb-root"></div>
+			           <script>(function(d, s, id) {
+			               var js, fjs = d.getElementsByTagName(s)[0];
+			               if (d.getElementById(id)) return;
+			               js = d.createElement(s); js.id = id;
+			               js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.5";
+			               fjs.parentNode.insertBefore(js, fjs);
+			               }(document, 'script', 'facebook-jssdk'));
+			           </script>
+
+				      <div class="fb-comments" data-href="https://www.facebook.com/yaoelpaisa" data-width="900" data-numposts="10"></div>
+				    </div></center>
 
 				  </div>
 			  </div>		
