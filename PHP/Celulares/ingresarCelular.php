@@ -93,7 +93,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					    	<label>Codigo Celular</label>
 					    	<input type="text" name="codigocelular" id="codigocelular" class="form-control">
 					    	<label>Marca</label>
-					    	<input type="text" name="marca" id="marca" class="form-control">
+					    	<select name="marca" id="marca" class="form-control">
+							    	<option value="Samsung">Samsung</option>
+							    	<option value="OnePlus">OnePlus</option>
+							    	<option value="Apple">Apple</option>
+							    	<option value="HTC">HTC</option>
+							    	<option value="Sony">Sony</option>
+							    	<option value="LG">LG</option>
+							    	<option value="Motorola">Motorola</option>
+							    	<option value="Asus">Asus</option>
+							    	<option value="Huawei">Huawei</option>
+							</select>
 					    	<label>Referencia</label>
 					    	<input type="text" name="referencia"  id="referencia" class="form-control">
 					    	<label>Cantidad</label>
@@ -111,11 +121,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					    	<label>Pantalla</label>
 					    	<input type="text" name="pantallapx" id="pantallapx" class="form-control">
 					    	<label>Sistema Operativo</label>
-					    	<input type="text" name="sistoperativo"  id="sistoperativo" class="form-control">
-					    	<label>Dimensiones</label>
+					    	<select name="sistoperativo"  id="sistoperativo" class="form-control">
+							    	<option value="Android">Android</option>
+							    	<option value="ios">ios</option>
+							</select>
+							<label>Dimensiones</label>
 					    	<input type="text" name="dimensionesm" id="dimensionesm" class="form-control">
 					    	<label>Operador</label>
-					    	<input type="text" name="operador"  id="operador" class="form-control">
+					    	<select name="operador"  id="operador" class="form-control">
+							    	<option value="libre">libre</option>
+							    	<option value="Claro">Claro</option>
+							    	<option value="Movistar">Movistar</option>
+							    	<option value="Tigo">Tigo</option>
+							</select>
 					    	<label>Costo</label>
 					    	<input type="text" name="costo"  id="costo" class="form-control">
 					    	<label>Precio</label>

@@ -41,6 +41,9 @@
 		  		    <div class="navigation">
 		  		    	<a class="toggleMenu" href="#">Menu</a>
 							<ul class="nav">
+							<li>
+							<a href="inicioUsuario.php">Inicio</a>
+						</li>
 								<li>
 									<a href="#">Usuarios</a>
 										<ul>
