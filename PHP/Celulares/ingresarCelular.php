@@ -99,7 +99,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							    	<option value="Apple">Apple</option>
 							    	<option value="HTC">HTC</option>
 							    	<option value="Sony">Sony</option>
-							    	<option value="LG">Lg</option>
+							    	<option value="Lg">Lg</option>
 							    	<option value="Motorola">Motorola</option>
 							    	<option value="Asus">Asus</option>
 							    	<option value="Huawei">Huawei</option>
