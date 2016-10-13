@@ -119,7 +119,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					if($fila['activo']=='t'){
     	    	?>
 			                <div class="ocarousel_window">
-			                   <a  href="preview.php?codigocelular=<?php echo $fila['codigocelular']; ?>" title="img1"> <img src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" alt="" width="80" /><p><?php echo $fila['referencia']; ?></p></a>
+			                   <a  href="preview.php?codigocelular=<?php echo $fila['codigocelular']; ?>" title="<?php echo $fila['referencia']; ?>"> <img src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" alt="" width="80" /><p><?php echo $fila['referencia']; ?></p></a>
 			                 </div>
 			     <?php
 			 		}
