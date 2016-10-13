@@ -119,7 +119,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					if($fila['activo']=='t'){
     	    	?>
 			                <div class="ocarousel_window">
-			                   <a  href="preview.php?codigocelular=<?php echo $fila['codigocelular']; ?>" title="<?php echo $fila['referencia']; ?>"> <img src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" alt="" width="80" /><p><?php echo $fila['referencia']; ?></p></a>
+			                   <a  href="preview.php?codigocelular=<?php echo $fila['codigocelular']; ?>" title="img1"> <img src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" alt="" width="80" /><p><?php echo $fila['marca']." ".$fila['referencia']; ?></p></a>
 			                 </div>
 			     <?php
 			 		}
@@ -179,7 +179,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	    	<h3>Resultados</h3>
     	    	<?php
 				include "conexion.php";
-    	    	$consulta="SELECT * FROM celular";
+    	    	$consulta="SELECT * FROM celular  Order by precio";
     	    	$resultado= pg_query($consulta) or die('La consulta fallo: ' . pg_last_error());
 
 				while($fila=pg_fetch_assoc($resultado))

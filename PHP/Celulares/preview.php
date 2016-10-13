@@ -64,7 +64,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					     	</div>
 					</div>
 			     <div class="clear"></div>
-  		    </div>     
+  		    </div>    
+
+  		   <?php
+  		   		if(@$_GET['tipo']!=1){
+  		   ?> 
   		    <div class="navigation">
   		    	<a class="toggleMenu" href="#">Menu</a>
 					<ul class="nav">
@@ -92,6 +96,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <span class="left-ribbon"> </span> 
       				 <span class="right-ribbon"> </span>    
   		    </div>
+			<?php
+				}else{
+			?>
+				<div class="navigation">
+  		    	<a class="toggleMenu" href="#">Menu</a>
+					<ul class="nav">
+						<li>
+							<a href="inicioUsuario.php">Inicio</a>
+						</li>
+						<li>
+							<a href="#">Usuarios</a>
+								<ul>
+								<li><a href="listarUsuarios.php">Listar</a></li>
+								<li><a href="ingresarUsuario.php">Ingresar</a></li>
+								</ul>
+						</li>
+						<li>
+							<a href="perfilUsuario.php">Perfil</a>
+						</li>
+
+						<li>
+							<a href="#">Celulares</a>
+								<ul>
+								<li><a href="listarCelulares.php">Listar</a></li>
+								<li><a href="ingresarCelular.php">Ingresar</a></li>
+								</ul>
+						</li>
+						<!--
+						<li>
+							<a href="#">ventas</a>
+
+						</li>
+						-->
+						<li>
+							<a  href="cerrarSesion.php">Cerrar Sesion</a>
+						</li>
+						
+					</ul>
+					 <span class="left-ribbon"> </span> 
+      				 <span class="right-ribbon"> </span>    
+  		   		 </div>
+
+			<?php	
+				}
+			?>
+
    		    </div>
           </div>
        <!------------End Header ------------>

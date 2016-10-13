@@ -40,9 +40,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   		    <div class="navigation">
   		    	<a class="toggleMenu" href="#">Menu</a>
 					<ul class="nav">
-					<li>
-							<a href="inicioUsuario.php">Inicio</a>
-						</li>
 						<li>
 							<a href="#">Usuarios</a>
 								<ul>
@@ -87,14 +84,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							  </div>-->
       				</div>
 				  <div class="contact-form">
-				  	<center><h3>Lista de Usuarios</h3></center>
+				  	<center><h3>Lista de Celulares</h3></center>
 					<?php							
 						//capturo el status para haci lanzar el error
 						if(isset($_GET['status']) and $_GET['status']==1)
 						{
 					?>
 						<div class="alert alert-success alert-dismissable">
-                                Usuarip Agregado Exitosamente
+                                Celular Agregado Exitosamente
                         </div>
 					   <br/><br/>
 
@@ -108,7 +105,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						{
 					?>
 						<div class="alert alert-success alert-dismissable">
-                                Usuario Eliminado Exitosamente
+                                Celular Eliminado Exitosamente
                         </div>
 					   <br/><br/>
 
@@ -122,7 +119,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						{
 					?>
 						<div class="alert alert-success alert-dismissable">
-                                Usuario Actualizado Exitosamente
+                                Celular Actualizado Exitosamente
                         </div>
 					   <br/><br/>
 
@@ -132,18 +129,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					?>
 
 					
-			<form action="script-filtroIdusuario.php" method="GET" onsubmit="return validacion(idusuario.value)" >
-				<label>ID </label>
-				<input type="text" name="idusuario" id="idusuario">
+			<form action="script-filtroCodigo.php" method="GET" onsubmit="return validacion(codigo.value)" >
+				<label>Codigo </label>
+				<input type="text" name="codigo" id="codigo">
 				<input type="submit" class="btn btn-xs btn-primary" value="Buscar">
+
 			</form>	
+			<br>
+				<a href="script-ordenarMarca.php"><input  type="submit" class="btn btn-xs btn-info" value="OrdenarMarca"></input></a>
+
+				<a href="script-ordenarReferencia.php"><input  type="submit" class="btn btn-xs btn-success" value="OrdenarReferencia"></input></a>
+
+				<a href="script-ordenarCantidad.php"><input  type="submit" class="btn btn-xs btn-info" value="OrdenarCantidad"></input></a>
+
+				<a href="script-ordenarPrecio.php"><input  type="submit" class="btn btn-xs btn-success" value="OrdenarPrecio"></input></a>
+
+
 					<?php							
 						//capturo el status para haci lanzar el error
 						if(isset($_GET['status']) and $_GET['status']==4)
 						{
 					?>
 						<div class="alert alert-danger alert-dismissable">
-                                El codigo de Usuario no Existe
+                                El codigo de celular no Existe
                         </div>
 					   <br/><br/>
 
@@ -151,18 +159,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						}
 
 					?>
+			<br>
+			<br>
+			
 			<table class="table table-striped table-bordered" id="tablalist">
               <thead>
               <!--TITULOS DE LA TABLA-->
               <tr>
-                <th align="center"><h4>IdUsuario</h4></th>
-                <th align="center"><h4>Nombre</h4></th>
-                <th align="center"><h4>Apellido</h4></th>
-                <th align="center"><h4>Contraseña</h4></th>
-                <th align="center"><h4>Direccion</h4></th>
-                <th align="center"><h4>Correo</h4></th>
-                <th align="center"><h4>Telefono</h4></th>
-                <th align="center"><h4>Rol</h4></th>
+                <th align="center"><h4>CoigoCelular</h4></th>
+                <th align="center"><h4>Marca</h4></th>
+                <th align="center"><h4>Referencia</h4></th>
+                <th align="center"><h4>Cantidad</h4></th>
+                <th align="center"><h4>Procesadorghz</h4></th>
+                <th align="center"><h4>Almexternogb</h4></th>
+                <th align="center"><h4>Alminternogb</h4></th>
+                <th align="center"><h4>Memoriagb</h4></th>
+                <th align="center"><h4>Camarampx</h4></th>
+                <th align="center"><h4>Pantallapx</h4></th>
+                <th align="center"><h4>Sistoperativo</h4></th>
+                <th align="center"><h4>Dimensionesm</h4></th>
+                <th align="center"><h4>Operador</h4></th>
+                <th align="center"><h4>Costo</h4></th>
+                <th align="center"><h4>Precio</h4></th>
+				<th align="center" width="25%" ><h4>Imagen</h4></th>
                 <!--<td align="center"><h4>Imagen</h4></td>-->
                 <th align="center"><h4>OPCIONES</h4></th>
               </tr>
@@ -170,14 +189,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
               <tbody>
              <!--FILAS DINAMICAS-->
              <?php
-             	$consulta="SELECT * FROM usuario";
+             	$consulta="SELECT * FROM celular ORDER BY referencia";
+
              	//comprobamos que la consulta fue exitosa
 				$resultado= pg_query($consulta) or die('La consulta fallo: ' . pg_last_error());
 
              	if(pg_num_rows($resultado)==0){
              ?>
              	<tr>
-             		<td colspan="5" align="center">NO SE ENCONTRARON usuarios</td>
+             		<td colspan="5" align="center">NO SE ENCONTRARON CELULARES</td>
              	</tr>
            
              <?php
@@ -188,32 +208,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
              ?>
               <tr>
               <!--se imprimen los valores obtenidos de la consutal_fac-->
-                <td align="center"> <?php echo $fila['idusuario'];?> </td>
-                <td align="center"> <?php echo $fila['nombre'];?> </td>
-                <td align="center"> <?php echo $fila['apellido'];?> </td>
-                <td align="center"> <?php echo $fila['contrasena'];?> </td>
-                <td align="center"> <?php echo $fila['direccion'];?> </td>
-                <td align="center"> <?php echo $fila['correo'];?> </td>
-                <td align="center"> <?php echo $fila['telefono'];?> </td>
-                <?php
-                if($fila['rol']==1){
-                ?>
-					<td align="center">Administrador</td>
-                <?php
-                }else if($fila['rol']==2){
-                ?>
-					<td align="center">Ventas</td>
-                <?php
-                }else if($fila['rol']==3){
-                ?>
-                	<td align="center">Bodega</td>
-                <?php
-                }
-            	?>
-                
+                <td align="center"> <?php echo $fila['codigocelular'];?> </td>
+                <td align="center"> <?php echo $fila['marca'];?> </td>
+                <td align="center"> <?php echo $fila['referencia'];?> </td>
+                <td align="center"> <?php echo $fila['cantidad'];?> </td>
+                <td align="center"> <?php echo $fila['procesadorghz'];?> </td>
+                <td align="center"> <?php echo $fila['almexternogb'];?> </td>
+                <td align="center"> <?php echo $fila['alminternogb'];?> </td>
+                <td align="center"> <?php echo $fila['memoriagb'];?> </td>
+                <td align="center"> <?php echo $fila['camarampx'];?> </td>
+                <td align="center"> <?php echo $fila['pantallapx'];?> </td>
+                <td align="center"> <?php echo $fila['sistoperativo'];?> </td>
+                <td align="center"> <?php echo $fila['dimensionesm'];?> </td>
+				<td align="center"> <?php echo $fila['operador'];?> </td>
+				<td align="center"> <?php echo $fila['costo'];?> </td>
+				<td align="center"> <?php echo $fila['precio'];?> </td>
 				<td>
-                <a class="btn btn-sm btn-success" href="editarUsuario.php?idusuario=<?php echo $fila['idusuario']; ?>" >Editar</a>   
-                <a class="btn btn-sm btn-danger" href="eliminarUsuario.php?idusuario=<?php echo $fila['idusuario']; ?>">Borrar</a>
+					<img src="imagenes.php?codigocelular=<?php echo $fila['codigocelular']; ?>" >
+				</td>
+                <td align="center">
+                <a class="btn btn-sm btn-success" href="editarCelular.php?codigocelular=<?php echo $fila['codigocelular']; ?>" >Editar</a>   
+                <a class="btn btn-sm btn-danger" href="eliminarCelular.php?codigocelular=<?php echo $fila['codigocelular']; ?>">Borrar</a>
                 </td>
 
               </tr>
@@ -262,7 +277,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		var mensaje="";
 		
 		if (codigo==""){
-			mensaje="EL CAMPO DE ID NO DEBE ESTAR VACIO,\n";
+			mensaje="EL CAMPO DE CODIGO NO DEBE ESTAR VACIO,\n";
 		}
 
 		if (mensaje=="") {

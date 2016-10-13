@@ -148,6 +148,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							      <li><a href="imagenSensitivaMarcas.php">Marca</a>
 							      </li>
 							      <li><a href="imagenSensitivaSistemas.php">Sistema Operativo</a></li>
+							      <li><a href="ordenaPrecio.php">Ordenar por precio $</a></li>
 						  	 </ul>
 						</div>	
 						<!--
@@ -186,7 +187,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					      HREF="script-filtroMarca.php?marca='Asus'" >
 
 				      <AREA SHAPE=rect COORDS="552,0,827,104" 
-					      HREF="script-filtroMarca.php?marca='Htc'" >
+					      HREF="script-filtroMarca.php?marca='HTC'" >
 
 					  <AREA SHAPE=rect COORDS="0,105,275,209" 
 					      HREF="script-filtroMarca.php?marca='Huawei'" >

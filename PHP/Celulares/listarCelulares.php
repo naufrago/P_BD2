@@ -40,6 +40,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   		    <div class="navigation">
   		    	<a class="toggleMenu" href="#">Menu</a>
 					<ul class="nav">
+					<li>
+							<a href="inicioUsuario.php">Inicio</a>
+						</li>
 						<li>
 							<a href="#">Usuarios</a>
 								<ul>
@@ -133,7 +136,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<label>Codigo </label>
 				<input type="text" name="codigo" id="codigo">
 				<input type="submit" class="btn btn-xs btn-primary" value="Buscar">
+
 			</form>	
+			<br>
+				<a href="script-ordenarMarca.php"><input  type="submit" class="btn btn-xs btn-info" value="OrdenarMarca"></input></a>
+
+				<a href="script-ordenarReferencia.php"><input  type="submit" class="btn btn-xs btn-success" value="OrdenarReferencia"></input></a>
+
+				<a href="script-ordenarCantidad.php"><input  type="submit" class="btn btn-xs btn-info" value="OrdenarCantidad"></input></a>
+
+				<a href="script-ordenarPrecio.php"><input  type="submit" class="btn btn-xs btn-success" value="OrdenarPrecio"></input></a>
+
+
 					<?php							
 						//capturo el status para haci lanzar el error
 						if(isset($_GET['status']) and $_GET['status']==4)
@@ -148,6 +162,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						}
 
 					?>
+			<br>
+			<br>
 			<table class="table table-striped table-bordered" id="tablalist">
               <thead>
               <!--TITULOS DE LA TABLA-->
